@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/Background"/>
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -8,6 +17,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="22dp"
         android:text="Login" />
     <EditText
         android:layout_width="match_parent"
@@ -16,6 +27,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="22dp"
         android:text="Senha" />
     <EditText
         android:layout_width="match_parent"
@@ -29,27 +42,48 @@
         android:layout_gravity="center"
         android:padding="16dp" >
         <TextView
+            android:id="@+id/btEsqueciSenha"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Esqueci a senha"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColor="#0000ff"
-           />
+            android:textColor="#ffffff"
+            android:textSize="22dp" />
 
         <TextView
+            android:id="@+id/btCadastrar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Cadastre-se"
             android:gravity="center"
-            android:textColor="#0000ff"
-            />
+            android:textColor="#ffffff"
+            android:textSize="22dp" />
     </LinearLayout>
 
-    <Button
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Login" />
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/btLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Entrar"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+
+        <ProgressBar
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:translationZ="2dp"
+            android:visibility="visible"
+            />
+    </FrameLayout>
+
 </LinearLayout>
+</FrameLayout>
