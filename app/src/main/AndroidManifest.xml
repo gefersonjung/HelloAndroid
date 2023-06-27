@@ -15,15 +15,14 @@
         <activity
             android:name=".CadastroActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+           android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".EsqueciSenhaActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".HomeActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

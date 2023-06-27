@@ -3,8 +3,10 @@ package com.example.helloandroid
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import com.example.helloandroid.domain.LoginService
 import com.example.helloandroid.extension.alert
 
 // Comentário de alteração 1.1
@@ -34,8 +36,13 @@ class MainActivity : AppCompatActivity() {
         //Lê os textos
         val login = tlogin.text.toString()
         val senha = tsenha.text.toString()
-        if (login == "geferson" && senha == "1234"){
+        Log.d("[Aula4-Prog]","Login: $login, senha: $senha")
+        val service = LoginService()
+        val user = service.login(login,senha)
+        if (user != null){
+            //Login ok, vai para a Home
             startActivity(Intent(this,HomeActivity::class.java))
+            finish()
         } else{
             //Erro de Login
             alert("Login Incorreto, verifique usuário e senha")
