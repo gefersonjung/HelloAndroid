@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.helloandroid.extension.alert
 
 // Comentário de alteração 1.1
 class MainActivity : AppCompatActivity() {
@@ -27,7 +28,18 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun onClickLogin(){
-        startActivity(Intent(this,HomeActivity::class.java))
+        // Encontra as views
+        val tlogin = findViewById<TextView>(R.id.tlogin)
+        val tsenha = findViewById<TextView>(R.id.tsenha)
+        //Lê os textos
+        val login = tlogin.text.toString()
+        val senha = tsenha.text.toString()
+        if (login == "geferson" && senha == "1234"){
+            startActivity(Intent(this,HomeActivity::class.java))
+        } else{
+            //Erro de Login
+            alert("Login Incorreto, verifique usuário e senha")
+        }
     }
     private fun onClickEsqueciSenha(){
         startActivity(Intent(this,EsqueciSenhaActivity::class.java))
